@@ -55,6 +55,14 @@ class GlobalSettings
                     'key' => $secret
         ));
     }
+    
+    public static function getEmailConfirmPageUrl($site, $email, $secret)
+    {
+        return $this->getControlPanelUrl($site) . 'emailConfirm?' . http_build_query(array(
+                    'email' => $email,
+                    'key' => $secret
+        ));
+    }
 
     public static function getDeviceDatabaseConfig($devId)
     {
