@@ -48,7 +48,7 @@ class GlobalSettings
         ));
     }
 
-    public function getRestorePasswordPageUrl($site, $email, $secret)
+    public static function getRestorePasswordPageUrl($site, $email, $secret)
     {
         return $this->getControlPanelUrl($site) . 'resetPassword?' . http_build_query(array(
                     'email' => $email,
