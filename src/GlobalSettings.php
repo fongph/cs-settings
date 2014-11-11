@@ -12,9 +12,12 @@ class GlobalSettings
 
     protected static $sites = array(
         1 => array(
-            'main' => 'http://cellspy.org/',
-            'cp' => 'http://cp.cellspy.org',
-            'cookieDomain' => '.cellspy.com',
+            'name' => 'pumpic.com',
+            'mainDomain' => 'http://pumpic.com',
+            'cpDomain' => 'http://pumpic.com',
+            'cpStaticDomain' => 'http://cp-new.topspyapp.com/static',
+            'cookieDomain' => '.pumpic.com',
+            'supportEmail' => 'support@topspyapp.com',
             'mailSender' => 'http://someHost/sender.php'
         ),
         2 => array(
@@ -23,10 +26,10 @@ class GlobalSettings
     );
     protected static $databases = array(
         'main' => array(
-            'host' => '66.232.96.3',
-            'username' => 'user_data',
-            'password' => 'pai1Geo9',
-            'dbname' => 'user_data'
+            'host' => '77.77.77.77',
+            'username' => 'main',
+            'password' => 'password',
+            'dbname' => 'db-name'
         ),
         'data' => array(
             0 => array(
@@ -43,18 +46,63 @@ class GlobalSettings
         'keyPairId' => 'APKAJEW3MLUPI6ZCDZBA'
     );
 
-    public static function getControlPanelUrl($site)
+    public static function getControlPanelURL($site)
     {
-        if (isset(self::$data[$site]['cp'])) {
-            return self::$data[$site]['cp'];
+        if (isset(self::$sites[$site]['cpStaticDomain'])) {
+            return self::$sites[$site]['cpStaticDomain'];
         }
 
-        throw new Exception("invalid site");
+        throw new InvalidSite("Invalid site or site settings");
+    }
+    
+    public static function getCookieDomain($site)
+    {
+        if (isset(self::$sites[$site]['cookieDomain'])) {
+            return self::$sites[$site]['cookieDomain'];
+        }
+
+        throw new InvalidSite("Invalid site or site settings");
+    }
+    
+    public static function getSupportEmail($site)
+    {
+        if (isset(self::$sites[$site]['supportEmail'])) {
+            return self::$sites[$site]['supportEmail'];
+        }
+
+        throw new InvalidSite("Invalid site or site settings");
+    }
+    
+    public static function getControlPanelStaticURL($site)
+    {
+        if (isset(self::$sites[$site]['cpDomain'])) {
+            return self::$sites[$site]['cpDomain'];
+        }
+
+        throw new InvalidSite("Invalid site or site settings");
+    }
+
+    public static function getName($site)
+    {
+        if (isset(self::$sites[$site]['name'])) {
+            return self::$sites[$site]['name'];
+        }
+        
+        throw new InvalidSite("Invalid site or site settings");
+    }
+    
+    public static function getMainURL($site)
+    {
+        if (isset(self::$sites[$site]['mainDomain'])) {
+            return self::$sites[$site]['mainDomain'];
+        }
+        
+        throw new InvalidSite("Invalid site or site settings");
     }
 
     public static function getUnlockAccountPageUrl($site, $email, $secret)
     {
-        return $this->getControlPanelUrl($site) . '/unlockAccount?' . http_build_query(array(
+        return $this->getControlPanelURL($site) . '/unlockAccount?' . http_build_query(array(
                     'email' => $email,
                     'key' => $secret
         ));
@@ -62,7 +110,7 @@ class GlobalSettings
 
     public static function getRestorePasswordPageUrl($site, $email, $secret)
     {
-        return $this->getControlPanelUrl($site) . '/resetPassword?' . http_build_query(array(
+        return $this->getControlPanelURL($site) . '/resetPassword?' . http_build_query(array(
                     'email' => $email,
                     'key' => $secret
         ));
@@ -70,7 +118,7 @@ class GlobalSettings
 
     public static function getEmailConfirmPageUrl($site, $email, $secret)
     {
-        return $this->getControlPanelUrl($site) . '/emailConfirm?' . http_build_query(array(
+        return $this->getControlPanelURL($site) . '/emailConfirm?' . http_build_query(array(
                     'email' => $email,
                     'key' => $secret
         ));
@@ -91,7 +139,7 @@ class GlobalSettings
         return self::$cloudFront;
     }
 
-    public function getS3Config()
+    public static function getS3Config()
     {
         return self::$s3;
     }
