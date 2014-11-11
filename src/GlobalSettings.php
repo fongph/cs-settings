@@ -18,6 +18,7 @@ class GlobalSettings
             'cpStaticDomain' => 'http://cp-new.topspyapp.com/static',
             'cookieDomain' => '.pumpic.com',
             'supportEmail' => 'support@topspyapp.com',
+            'registrationPage' => 'http://pumpic.com/pricing-and-plans',
             'mailSender' => 'http://someHost/sender.php'
         ),
         2 => array(
@@ -100,6 +101,15 @@ class GlobalSettings
         throw new InvalidSite("Invalid site or site settings");
     }
 
+    public static function getRegistrationPageURL($site)
+    {
+        if (isset(self::$sites[$site]['registrationPage'])) {
+            return self::$sites[$site]['registrationPage'];
+        }
+        
+        throw new InvalidSite("Invalid site or site settings");
+    }
+    
     public static function getUnlockAccountPageUrl($site, $email, $secret)
     {
         return $this->getControlPanelURL($site) . '/unlockAccount?' . http_build_query(array(
