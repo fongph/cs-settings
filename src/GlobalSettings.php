@@ -112,7 +112,7 @@ class GlobalSettings
     
     public static function getUnlockAccountPageUrl($site, $email, $secret)
     {
-        return $this->getControlPanelURL($site) . '/unlockAccount?' . http_build_query(array(
+        return self::getControlPanelURL($site) . '/unlockAccount?' . http_build_query(array(
                     'email' => $email,
                     'key' => $secret
         ));
@@ -120,7 +120,7 @@ class GlobalSettings
 
     public static function getRestorePasswordPageUrl($site, $email, $secret)
     {
-        return $this->getControlPanelURL($site) . '/resetPassword?' . http_build_query(array(
+        return self::getControlPanelURL($site) . '/resetPassword?' . http_build_query(array(
                     'email' => $email,
                     'key' => $secret
         ));
@@ -128,7 +128,7 @@ class GlobalSettings
 
     public static function getEmailConfirmPageUrl($site, $email, $secret)
     {
-        return $this->getControlPanelURL($site) . '/emailConfirm?' . http_build_query(array(
+        return self::getControlPanelURL($site) . '/emailConfirm?' . http_build_query(array(
                     'email' => $email,
                     'key' => $secret
         ));
