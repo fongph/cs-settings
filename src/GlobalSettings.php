@@ -11,13 +11,23 @@ class GlobalSettings
 {
 
     protected static $sites = array(
+        0 => array(
+            'name' => 'test',
+            'mainDomain' => 'http://test',
+            'cpDomain' => 'http://cp.test',
+            'cpStaticDomain' => 'http://cp.test/static',
+            'cookieDomain' => '.test',
+            'supportEmail' => 'support@pumpic.com',
+            'registrationPage' => 'http://test/pricing-and-plans',
+            'mailSender' => 'http://test/sender.php'
+        ),
         1 => array(
             'name' => 'pumpic.com',
             'mainDomain' => 'http://pumpic.com',
-            'cpDomain' => 'http://pumpic.com',
-            'cpStaticDomain' => 'http://cp-new.topspyapp.com/static',
+            'cpDomain' => 'http://cp.pumpic.com',
+            'cpStaticDomain' => 'http://cp.pumpic.com/static',
             'cookieDomain' => '.pumpic.com',
-            'supportEmail' => 'support@topspyapp.com',
+            'supportEmail' => 'support@pumpic.com',
             'registrationPage' => 'http://pumpic.com/pricing-and-plans',
             'mailSender' => 'http://someHost/sender.php'
         ),
