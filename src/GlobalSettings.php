@@ -56,6 +56,7 @@ class GlobalSettings
         'domain' => 'http://media.topspyapp.com/',
         'keyPairId' => 'APKAJEW3MLUPI6ZCDZBA'
     );
+    protected static $apiSalt = 'd41d8cd98f00b204e';
 
     public static function getControlPanelURL($site)
     {
@@ -150,6 +151,10 @@ class GlobalSettings
         $number = 0;
 
         return self::$databases['data'][$number];
+    }
+    
+    public static function verifyApiRequest($hash, $methodName, $timestamp) {
+        return md5($hash . $methodName . $timestamp, self::$apiSalt);
     }
 
     public static function getCloudFrontConfig()
