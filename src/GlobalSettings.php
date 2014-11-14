@@ -154,7 +154,7 @@ class GlobalSettings
     }
     
     public static function verifyApiRequest($hash, $methodName, $timestamp) {
-        return md5($hash . $methodName . $timestamp, self::$apiSalt);
+        return md5(self::$apiSalt . $methodName . $timestamp) == $hash;
     }
 
     public static function getCloudFrontConfig()
