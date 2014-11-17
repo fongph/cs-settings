@@ -47,6 +47,11 @@ class GlobalSettings
             )
         )
     );
+    protected static $redis = array(
+        'host' => '77.77.77.77',
+        'port' => 6379,
+        'database' => 1
+    );
     protected static $s3 = array(
         'key' => 'AKIAIHGTCBLPUEKBCRGA',
         'secret' => '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',
@@ -66,7 +71,7 @@ class GlobalSettings
 
         throw new InvalidSite("Invalid site or site settings");
     }
-    
+
     public static function getCookieDomain($site)
     {
         if (isset(self::$sites[$site]['cookieDomain'])) {
@@ -75,7 +80,7 @@ class GlobalSettings
 
         throw new InvalidSite("Invalid site or site settings");
     }
-    
+
     public static function getSupportEmail($site)
     {
         if (isset(self::$sites[$site]['supportEmail'])) {
@@ -84,7 +89,7 @@ class GlobalSettings
 
         throw new InvalidSite("Invalid site or site settings");
     }
-    
+
     public static function getControlPanelStaticURL($site)
     {
         if (isset(self::$sites[$site]['cpDomain'])) {
@@ -99,16 +104,16 @@ class GlobalSettings
         if (isset(self::$sites[$site]['name'])) {
             return self::$sites[$site]['name'];
         }
-        
+
         throw new InvalidSite("Invalid site or site settings");
     }
-    
+
     public static function getMainURL($site)
     {
         if (isset(self::$sites[$site]['mainDomain'])) {
             return self::$sites[$site]['mainDomain'];
         }
-        
+
         throw new InvalidSite("Invalid site or site settings");
     }
 
@@ -117,10 +122,10 @@ class GlobalSettings
         if (isset(self::$sites[$site]['registrationPage'])) {
             return self::$sites[$site]['registrationPage'];
         }
-        
+
         throw new InvalidSite("Invalid site or site settings");
     }
-    
+
     public static function getUnlockAccountPageUrl($site, $email, $secret)
     {
         return self::getControlPanelURL($site) . '/unlockAccount?' . http_build_query(array(
@@ -152,8 +157,9 @@ class GlobalSettings
 
         return self::$databases['data'][$number];
     }
-    
-    public static function verifyApiRequest($hash, $methodName, $timestamp) {
+
+    public static function verifyApiRequest($hash, $methodName, $timestamp)
+    {
         return md5($hash . $methodName . $timestamp, self::$apiSalt);
     }
 
@@ -172,6 +178,11 @@ class GlobalSettings
     public static function getMainDbConfig()
     {
         return self::$databases['main'];
+    }
+
+    public static function getRedisConfig()
+    {
+        return self::$redis;
     }
 
 }
