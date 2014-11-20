@@ -40,10 +40,24 @@ class GlobalSettings
             'host' => '77.77.77.77',
             'username' => 'main',
             'password' => 'password',
-            'dbname' => 'db-name'
+            'dbname' => 'db-name',
+                'options' => array(
+                    PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8;',
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            )
         ),
         'data' => array(
             0 => array(
+                'host' => '77.77.77.77',
+                'username' => 'main',
+                'password' => 'password',
+                'dbname' => 'db-name',
+                'options' => array(
+                    PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8;',
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+                )
             )
         )
     );
@@ -61,8 +75,18 @@ class GlobalSettings
         'domain' => 'http://media.topspyapp.com/',
         'keyPairId' => 'APKAJEW3MLUPI6ZCDZBA'
     );
-    protected static $apiSalt = 'd41d8cd98f00b204e';
-
+    protected static $apiSalt = 'test';
+    
+    public static function getShardDB($uniq_id)
+    {
+        return self::$databases['data'][0];
+    }
+    
+    public static function getDB()
+    {
+        return self::$databases['main'];
+    }
+    
     public static function getControlPanelURL($site)
     {
         if (isset(self::$sites[$site]['cpStaticDomain'])) {
