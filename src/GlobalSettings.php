@@ -2,6 +2,8 @@
 
 namespace CS\Settings;
 
+use PDO;
+
 /**
  * Description of GlobalSettings
  *
