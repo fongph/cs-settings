@@ -2,6 +2,8 @@
 
 namespace CS\Settings;
 
+use PDO;
+
 /**
 * Description of GlobalSettings
 *
@@ -60,6 +62,11 @@ class GlobalSettings
                 )
             )
         )
+    );
+    protected static $redis = array(
+        'host' => '77.77.77.77',
+        'port' => 6379,
+        'database' => 1
     );
     protected static $s3 = array(
         'key'   => 'AKIAIHGTCBLPUEKBCRGA',
@@ -224,6 +231,11 @@ class GlobalSettings
     public static function getMainDbConfig()
     {
         return self::$databases['main'];
+    }
+
+    public static function getRedisConfig()
+    {
+        return self::$redis;
     }
 
 }
