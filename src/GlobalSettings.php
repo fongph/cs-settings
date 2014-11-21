@@ -69,9 +69,9 @@ class GlobalSettings
         'database' => 1
     );
     protected static $s3 = array(
-        'key'   => 'AKIAIHGTCBLPUEKBCRGA',
-        'secret'=> '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',
-        'bucket'=> 'data'
+        'key'   => 'AKIAJCULQL4O4GXAD4WQ',
+        'secret'=> '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',
+        'bucket'=> 'received-files'
     );
     protected static $cloudFront = array(
         'domain'   => 'http://media.topspyapp.com/',
