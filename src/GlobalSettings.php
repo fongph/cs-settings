@@ -74,8 +74,8 @@ class GlobalSettings
         'bucket'=> 'received-files'
     );
     protected static $cloudFront = array(
-        'domain'   => 'http://media.topspyapp.com/',
-        'keyPairId'=> 'APKAJEW3MLUPI6ZCDZBA'
+        'domain'   => 'http://media.pumpic.com/',
+        'keyPairId'=> 'APKAJGHJLY2FNTE5A62Q'
     );
     protected static $apiSalt = 'test';
 
