@@ -76,7 +76,7 @@ class GlobalSettings
     protected static $s3 = array(
         'key'   => 'AKIAJCULQL4O4GXAD4WQ',
         'secret'=> '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',
-        'bucket'=> 'received-files'
+        'bucket'=> 'incoming-files'
     );
     protected static $cloudFront = array(
         'domain'   => 'http://media.pumpic.com/',
@@ -92,22 +92,22 @@ class GlobalSettings
 
     protected static $apiJson = array(
         'master'=> 'https://apijson.pumpic.com:4433/api.php',
-        'slave'    => array(0=> 'https://apijson.pumpic.com:4433/slave-api.php')
+        'slave'    => null
     );
 
     protected static $apiUpload = array(
         'master'=> 'https://apifiles.pumpic.com:4433/api_upload.php',
-        'slave'    => array(0=> 'https://apifiles.pumpic.com:4433/slave-api-upload.php')
+        'slave'    => null
     );
 
-    public static function getApiJson()
+    public static function getApiJson($type)
     {
-        return self::$apiJson['master'];
+        return self::$apiJson[$type];
     }
 
-    public static function getApiUpload()
+    public static function getApiUpload($type)
     {
-        return self::$apiUpload['master'];
+        return self::$apiUpload[$type];
     }
 
 
