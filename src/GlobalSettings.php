@@ -43,7 +43,7 @@ class GlobalSettings
             'username'=> 'main',
             'password'=> 'password',
             'dbname'  => 'db-name',
-            'options'  => array(
+            'options'    => array(
                 PDO::MYSQL_ATTR_INIT_COMMAND=> 'set names utf8;',
                 PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE=> PDO::FETCH_ASSOC
@@ -55,7 +55,7 @@ class GlobalSettings
                 'username'=> 'main',
                 'password'=> 'password',
                 'dbname'  => 'db-name',
-                'options'  => array(
+                'options'    => array(
                     PDO::MYSQL_ATTR_INIT_COMMAND=> 'set names utf8;',
                     PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE=> PDO::FETCH_ASSOC
@@ -64,9 +64,14 @@ class GlobalSettings
         )
     );
     protected static $redis = array(
-        'host' => '77.77.77.77',
-        'port' => 6379,
-        'database' => 1
+        'pins'     => array(
+            'host'    => '77.77.77.77',
+            'port'    => 6379,
+            'database'=> 0),
+        'limits' => array(
+            'host'    => '77.77.77.77',
+            'port'    => 6379,
+            'database'=> 1)
     );
     protected static $s3 = array(
         'key'   => 'AKIAJCULQL4O4GXAD4WQ',
@@ -87,12 +92,12 @@ class GlobalSettings
 
     protected static $apiJson = array(
         'master'=> 'https://apijson.pumpic.com:4433/api.php',
-        'slave'  => array(0=> 'https://apijson.pumpic.com:4433/slave-api.php')
+        'slave'    => array(0=> 'https://apijson.pumpic.com:4433/slave-api.php')
     );
 
     protected static $apiUpload = array(
         'master'=> 'https://apifiles.pumpic.com:4433/api_upload.php',
-        'slave'  => array(0=> 'https://apifiles.pumpic.com:4433/slave-api-upload.php')
+        'slave'    => array(0=> 'https://apifiles.pumpic.com:4433/slave-api-upload.php')
     );
 
     public static function getApiJson()
@@ -233,9 +238,9 @@ class GlobalSettings
         return self::$databases['main'];
     }
 
-    public static function getRedisConfig()
+    public static function getRedisConfig($keyDB = 'pins')
     {
-        return self::$redis;
+        return self::$redis[$keyDB];
     }
 
 }
