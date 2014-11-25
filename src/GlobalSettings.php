@@ -43,7 +43,7 @@ class GlobalSettings
             'username'=> 'main',
             'password'=> 'password',
             'dbname'  => 'db-name',
-            'options'    => array(
+            'options'       => array(
                 PDO::MYSQL_ATTR_INIT_COMMAND=> 'set names utf8;',
                 PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE=> PDO::FETCH_ASSOC
@@ -55,7 +55,7 @@ class GlobalSettings
                 'username'=> 'main',
                 'password'=> 'password',
                 'dbname'  => 'db-name',
-                'options'    => array(
+                'options'       => array(
                     PDO::MYSQL_ATTR_INIT_COMMAND=> 'set names utf8;',
                     PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE=> PDO::FETCH_ASSOC
@@ -64,7 +64,7 @@ class GlobalSettings
         )
     );
     protected static $redis = array(
-        'pins'     => array(
+        'pins'           => array(
             'host'    => '77.77.77.77',
             'port'    => 6379,
             'database'=> 0),
@@ -92,13 +92,18 @@ class GlobalSettings
 
     protected static $apiJson = array(
         'master'=> 'https://apijson.pumpic.com:4433/api.php',
-        'slave'    => null
+        'slave' => null
     );
 
     protected static $apiUpload = array(
         'master'=> 'https://apifiles.pumpic.com:4433/api_upload.php',
-        'slave'    => null
+        'slave' => null
     );
+
+    public static function getVersionApp($os)
+    {
+        return self::$versionsApps[$os];
+    }
 
     public static function getApiJson($type)
     {
