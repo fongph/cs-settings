@@ -84,6 +84,8 @@ class GlobalSettings
     );
     protected static $apiSalt = 'test';
 
+    protected static $timeWaitForSend = null; //in seconds
+
     protected static $versionsApps = array(
         'ios'       => 44,
         'android'   => 66,
@@ -99,6 +101,10 @@ class GlobalSettings
         'master'=> 'https://apifiles.pumpic.com:4433/api_upload.php',
         'slave' => null
     );
+
+    public static function getTimeWaitForSend(){
+        return self::$timeWaitForSend;
+    }
 
     public static function getVersionApp($os)
     {
