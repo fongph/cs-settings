@@ -14,13 +14,13 @@ class GlobalSettings
 
     protected static $sites = array(
         0 => array(
-            'name'            => 'test',
-            'mainDomain'      => 'http://test',
-            'cpDomain'        => 'http://cp.test',
-            'cpStaticDomain'  => 'http://cp.test/static',
-            'cookieDomain'    => '.test',
+            'name'            => 'pumpic',
+            'mainDomain'      => 'http://pumpic.com',
+            'cpDomain'        => 'http://cp.pumpic.com',
+            'cpStaticDomain'  => 'http://cp.pumpic.com/static',
+            'cookieDomain'    => '.pumpic.com',
             'supportEmail'    => 'support@pumpic.com',
-            'registrationPage'=> 'http://test/pricing-and-plans',
+            'registrationPage'=> 'http://pumpic.com/pricing-and-plans',
             'mailSender'      => 'http://test/sender.php'
         ),
         1 => array(
@@ -39,10 +39,10 @@ class GlobalSettings
     );
     protected static $databases = array(
         'main' => array(
-            'host'    => '77.77.77.77',
-            'username'=> 'main',
-            'password'=> 'password',
-            'dbname'  => 'db-name',
+            'host'    => '188.40.64.2',
+            'username'=> 'ci_user',
+            'password'=> 'qmsgrSR8qhxeNSC44533hVBqwNajd62z2QtXwN6E',
+            'dbname'  => 'main',
             'options'       => array(
                 PDO::MYSQL_ATTR_INIT_COMMAND=> 'set names utf8;',
                 PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
@@ -51,10 +51,10 @@ class GlobalSettings
         ),
         'data' => array(
             0 => array(
-                'host'    => '77.77.77.77',
-                'username'=> 'main',
-                'password'=> 'password',
-                'dbname'  => 'db-name',
+                'host'    => '85.10.241.183',
+                'username'=> 'ci_user',
+                'password'=> 'qmsgrSR8qhxeNSC44533hVBqwNajd62z2QtXwN6E',
+                'dbname'  => 'data',
                 'options'       => array(
                     PDO::MYSQL_ATTR_INIT_COMMAND=> 'set names utf8;',
                     PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
@@ -65,12 +65,12 @@ class GlobalSettings
     );
     protected static $redis = array(
         'pins'           => array(
-            'host'    => '77.77.77.77',
-            'port'    => 6379,
+            'host'    => '148.251.64.9',
+            'port'    => 6319,
             'database'=> 0),
         'limits' => array(
-            'host'    => '77.77.77.77',
-            'port'    => 6379,
+            'host'    => '148.251.64.9',
+            'port'    => 6319,
             'database'=> 1)
     );
     protected static $s3 = array(
