@@ -51,7 +51,7 @@ class GlobalSettings
         ),
         'data' => array(
             0 => array(
-                'host'    => '85.10.241.183',
+                'host'    => '188.40.64.2',
                 'username'=> 'ci_user',
                 'password'=> 'qmsgrSR8qhxeNSC44533hVBqwNajd62z2QtXwN6E',
                 'dbname'  => 'data',
