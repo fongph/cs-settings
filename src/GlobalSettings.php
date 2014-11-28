@@ -43,10 +43,10 @@ class GlobalSettings
             'username' => 'main',
             'password' => 'password',
             'dbname' => 'db-name',
-                'options' => array(
-                    PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8;',
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            'options' => array(
+                PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8;',
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             )
         ),
         'data' => array(
@@ -78,21 +78,30 @@ class GlobalSettings
         'keyPairId' => 'APKAJEW3MLUPI6ZCDZBA'
     );
     protected static $apiSalt = 'test';
-    
+    protected static $fastSpringConfig = array(
+        'storeId' => 'pumpic',
+        'privateKey' => '5e478cb711606c68738a232a9f3db855'
+    );
+
     public static function getShardDB($uniq_id)
     {
         return self::$databases['data'][0];
     }
-    
+
     public static function getDB()
     {
         return self::$databases['main'];
     }
-    
+
+    public static function getFastSpringConfig()
+    {
+        return self::$fastSpringConfig;
+    }
+
     public static function getControlPanelURL($site)
     {
-        if (isset(self::$sites[$site]['cpStaticDomain'])) {
-            return self::$sites[$site]['cpStaticDomain'];
+        if (isset(self::$sites[$site]['cpDomain'])) {
+            return self::$sites[$site]['cpDomain'];
         }
 
         throw new InvalidSite("Invalid site or site settings");
@@ -118,8 +127,8 @@ class GlobalSettings
 
     public static function getControlPanelStaticURL($site)
     {
-        if (isset(self::$sites[$site]['cpDomain'])) {
-            return self::$sites[$site]['cpDomain'];
+        if (isset(self::$sites[$site]['cpStaticDomain'])) {
+            return self::$sites[$site]['cpStaticDomain'];
         }
 
         throw new InvalidSite("Invalid site or site settings");
@@ -184,7 +193,8 @@ class GlobalSettings
         return self::$databases['data'][$number];
     }
 
-    public static function verifyApiRequest($hash, $methodName, $timestamp) {
+    public static function verifyApiRequest($hash, $methodName, $timestamp)
+    {
         return md5(self::$apiSalt . $methodName . $timestamp) == $hash;
     }
 
