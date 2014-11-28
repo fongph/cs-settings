@@ -5,33 +5,33 @@ namespace CS\Settings;
 use PDO;
 
 /**
- * Description of GlobalSettings
- *
- * @author root
- */
+* Description of GlobalSettings
+*
+* @author root
+*/
 class GlobalSettings
 {
 
     protected static $sites = array(
         0 => array(
-            'name' => 'test',
-            'mainDomain' => 'http://test',
-            'cpDomain' => 'http://cp.test',
-            'cpStaticDomain' => 'http://cp.test/static',
-            'cookieDomain' => '.test',
-            'supportEmail' => 'support@pumpic.com',
-            'registrationPage' => 'http://test/pricing-and-plans',
-            'mailSender' => 'http://test/sender.php'
+            'name'            => 'pumpic',
+            'mainDomain'      => 'http://pumpic.com',
+            'cpDomain'        => 'http://cp.pumpic.com',
+            'cpStaticDomain'  => 'http://cp.pumpic.com/static',
+            'cookieDomain'    => '.pumpic.com',
+            'supportEmail'    => 'support@pumpic.com',
+            'registrationPage'=> 'http://pumpic.com/pricing-and-plans',
+            'mailSender'      => 'http://test/sender.php'
         ),
         1 => array(
-            'name' => 'pumpic.com',
-            'mainDomain' => 'http://pumpic.com',
-            'cpDomain' => 'http://cp.pumpic.com',
-            'cpStaticDomain' => 'http://cp.pumpic.com/static',
-            'cookieDomain' => '.pumpic.com',
-            'supportEmail' => 'support@pumpic.com',
-            'registrationPage' => 'http://pumpic.com/pricing-and-plans',
-            'mailSender' => 'http://someHost/sender.php'
+            'name'            => 'pumpic.com',
+            'mainDomain'      => 'http://pumpic.com',
+            'cpDomain'        => 'http://cp.pumpic.com',
+            'cpStaticDomain'  => 'http://cp.pumpic.com/static',
+            'cookieDomain'    => '.pumpic.com',
+            'supportEmail'    => 'support@pumpic.com',
+            'registrationPage'=> 'http://pumpic.com/pricing-and-plans',
+            'mailSender'      => 'http://someHost/sender.php'
         ),
         2 => array(
             ''
@@ -39,49 +39,92 @@ class GlobalSettings
     );
     protected static $databases = array(
         'main' => array(
-            'host' => '77.77.77.77',
-            'username' => 'main',
-            'password' => 'password',
-            'dbname' => 'db-name',
-            'options' => array(
-                PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8;',
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            'host'    => '188.40.64.2',
+            'username'=> 'ci_user',
+            'password'=> 'qmsgrSR8qhxeNSC44533hVBqwNajd62z2QtXwN6E',
+            'dbname'  => 'main',
+            'options'       => array(
+                PDO::MYSQL_ATTR_INIT_COMMAND=> 'set names utf8;',
+                PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE=> PDO::FETCH_ASSOC
             )
         ),
         'data' => array(
             0 => array(
-                'host' => '77.77.77.77',
-                'username' => 'main',
-                'password' => 'password',
-                'dbname' => 'db-name',
-                'options' => array(
-                    PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8;',
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+                'host'    => '188.40.64.2',
+                'username'=> 'ci_user',
+                'password'=> 'qmsgrSR8qhxeNSC44533hVBqwNajd62z2QtXwN6E',
+                'dbname'  => 'data',
+                'options'       => array(
+                    PDO::MYSQL_ATTR_INIT_COMMAND=> 'set names utf8;',
+                    PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE=> PDO::FETCH_ASSOC
                 )
             )
         )
     );
     protected static $redis = array(
-        'host' => '77.77.77.77',
-        'port' => 6379,
-        'database' => 1
+        'pins'           => array(
+            'host'    => '148.251.64.9',
+            'port'    => 6319,
+            'database'=> 0),
+        'limits' => array(
+            'host'    => '148.251.64.9',
+            'port'    => 6319,
+            'database'=> 1)
     );
     protected static $s3 = array(
-        'key' => 'AKIAIHGTCBLPUEKBCRGA',
-        'secret' => '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',
-        'bucket' => 'data'
+        'key'   => 'AKIAJCULQL4O4GXAD4WQ',
+        'secret'=> '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',
+        'bucket'=> 'incoming-files'
     );
     protected static $cloudFront = array(
-        'domain' => 'http://media.topspyapp.com/',
-        'keyPairId' => 'APKAJEW3MLUPI6ZCDZBA'
+        'domain'   => 'http://media.pumpic.com/',
+        'keyPairId'=> 'APKAJGHJLY2FNTE5A62Q'
     );
     protected static $apiSalt = 'test';
+
     protected static $fastSpringConfig = array(
         'storeId' => 'pumpic',
         'privateKey' => '5e478cb711606c68738a232a9f3db855'
     );
+
+    protected static $timeWaitForSend = null; //in seconds
+
+    protected static $versionsApps = array(
+        'ios'       => 44,
+        'android'   => 66,
+        'blackberry'=> 3
+    );
+
+    protected static $apiJson = array(
+        'master'=> 'https://apijson.pumpic.com:4433/api.php',
+        'slave' => null
+    );
+
+    protected static $apiUpload = array(
+        'master'=> 'https://apifiles.pumpic.com:4433/api_upload.php',
+        'slave' => null
+    );
+
+    public static function getTimeWaitForSend(){
+        return self::$timeWaitForSend;
+    }
+
+    public static function getVersionApp($os)
+    {
+        return self::$versionsApps[$os];
+    }
+
+    public static function getApiJson($type)
+    {
+        return self::$apiJson[$type];
+    }
+
+    public static function getApiUpload($type)
+    {
+        return self::$apiUpload[$type];
+    }
 
     public static function getShardDB($uniq_id)
     {
@@ -164,25 +207,25 @@ class GlobalSettings
     public static function getUnlockAccountPageUrl($site, $email, $secret)
     {
         return self::getControlPanelURL($site) . '/unlockAccount?' . http_build_query(array(
-                    'email' => $email,
-                    'key' => $secret
-        ));
+                'email'=> $email,
+                'key'  => $secret
+            ));
     }
 
     public static function getRestorePasswordPageUrl($site, $email, $secret)
     {
         return self::getControlPanelURL($site) . '/resetPassword?' . http_build_query(array(
-                    'email' => $email,
-                    'key' => $secret
-        ));
+                'email'=> $email,
+                'key'  => $secret
+            ));
     }
 
     public static function getEmailConfirmPageUrl($site, $email, $secret)
     {
         return self::getControlPanelURL($site) . '/emailConfirm?' . http_build_query(array(
-                    'email' => $email,
-                    'key' => $secret
-        ));
+                'email'=> $email,
+                'key'  => $secret
+            ));
     }
 
     public static function getDeviceDatabaseConfig($devId)
@@ -215,9 +258,9 @@ class GlobalSettings
         return self::$databases['main'];
     }
 
-    public static function getRedisConfig()
+    public static function getRedisConfig($keyDB = 'pins')
     {
-        return self::$redis;
+        return self::$redis[$keyDB];
     }
 
 }
