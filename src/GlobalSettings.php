@@ -22,7 +22,8 @@ class GlobalSettings
             'supportEmail'     => 'support@pumpic.com',
             'registrationPage' => 'http://pumpic.com/pricing.html',
             'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
-            'mailSender'       => 'http://sender-mail.pumpic.com/'
+            'mailSender'       => 'http://sender-mail.pumpic.com/',
+            'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11'
         )
     );
     protected static $databases = array(
@@ -190,6 +191,15 @@ class GlobalSettings
     {
         if (isset(self::$sites[$site]['mailSender'])) {
             return self::$sites[$site]['mailSender'];
+        }
+
+        throw new InvalidSite("Invalid site or site settings");
+    }
+    
+    public static function getMailSenderSecret($site)
+    {
+        if (isset(self::$sites[$site]['mailSenderSecret'])) {
+            return self::$sites[$site]['mailSenderSecret'];
         }
 
         throw new InvalidSite("Invalid site or site settings");
