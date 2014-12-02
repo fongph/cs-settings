@@ -13,6 +13,18 @@ class GlobalSettings
 {
 
     protected static $sites = array(
+        0 => array(
+            'mainDomain'       => 'http://pumpic.com',
+            'cpDomain'         => 'http://cp.pumpic.com',
+            'cpStaticDomain'   => 'http://cp.pumpic.com/static',
+            'demoCpDomain'     => 'http://demo.pumpic.com',
+            'cookieDomain'     => '.pumpic.com',
+            'supportEmail'     => 'support@pumpic.com',
+            'registrationPage' => 'http://pumpic.com/pricing.html',
+            'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
+            'mailSender'       => 'http://sender-mail.pumpic.com/',
+            'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11'
+        ),
         1 => array(
             'mainDomain'       => 'http://pumpic.com',
             'cpDomain'         => 'http://cp.pumpic.com',
