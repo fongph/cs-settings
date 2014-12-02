@@ -21,6 +21,7 @@ class GlobalSettings
             'cookieDomain'    => '.pumpic.com',
             'supportEmail'    => 'support@pumpic.com',
             'registrationPage'=> 'http://pumpic.com/pricing.html',
+            'refundPolicyPage'=> 'http://pumpic.com/policy.html#refund-policy',
             'mailSender'      => 'http://test/sender.php'
         ),
         1 => array(
