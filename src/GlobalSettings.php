@@ -20,7 +20,7 @@ class GlobalSettings
             'cpStaticDomain'  => 'http://cp.pumpic.com/static',
             'cookieDomain'    => '.pumpic.com',
             'supportEmail'    => 'support@pumpic.com',
-            'registrationPage'=> 'http://pumpic.com/pricing-and-plans',
+            'registrationPage'=> 'http://pumpic.com/pricing.html',
             'mailSender'      => 'http://test/sender.php'
         ),
         1 => array(
