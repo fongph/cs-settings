@@ -14,14 +14,15 @@ class GlobalSettings
 
     protected static $sites = array(
         1 => array(
-            'mainDomain'      => 'http://pumpic.com',
-            'cpDomain'        => 'http://cp.pumpic.com',
-            'cpStaticDomain'  => 'http://cp.pumpic.com/static',
-            'cookieDomain'    => '.pumpic.com',
-            'supportEmail'    => 'support@pumpic.com',
-            'registrationPage'=> 'http://pumpic.com/pricing.html',
-            'refundPolicyPage'=> 'http://pumpic.com/policy.html#refund-policy',
-            'mailSender'      => 'http://sender-mail.pumpic.com/'
+            'mainDomain'       => 'http://pumpic.com',
+            'cpDomain'         => 'http://cp.pumpic.com',
+            'cpStaticDomain'   => 'http://cp.pumpic.com/static',
+            'demoCpDomain'     => 'http://demo.pumpic.com',
+            'cookieDomain'     => '.pumpic.com',
+            'supportEmail'     => 'support@pumpic.com',
+            'registrationPage' => 'http://pumpic.com/pricing.html',
+            'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
+            'mailSender'       => 'http://sender-mail.pumpic.com/'
         )
     );
     protected static $databases = array(
@@ -135,6 +136,15 @@ class GlobalSettings
     {
         if (isset(self::$sites[$site]['cpDomain'])) {
             return self::$sites[$site]['cpDomain'];
+        }
+
+        throw new InvalidSite("Invalid site or site settings");
+    }
+    
+    public static function getDemoControlPanelURL($site)
+    {
+        if (isset(self::$sites[$site]['demoCpDomain'])) {
+            return self::$sites[$site]['demoCpDomain'];
         }
 
         throw new InvalidSite("Invalid site or site settings");
