@@ -13,8 +13,7 @@ class GlobalSettings
 {
 
     protected static $sites = array(
-        0 => array(
-            'name'            => 'pumpic',
+        1 => array(
             'mainDomain'      => 'http://pumpic.com',
             'cpDomain'        => 'http://cp.pumpic.com',
             'cpStaticDomain'  => 'http://cp.pumpic.com/static',
@@ -22,20 +21,7 @@ class GlobalSettings
             'supportEmail'    => 'support@pumpic.com',
             'registrationPage'=> 'http://pumpic.com/pricing.html',
             'refundPolicyPage'=> 'http://pumpic.com/policy.html#refund-policy',
-            'mailSender'      => 'http://test/sender.php'
-        ),
-        1 => array(
-            'name'            => 'pumpic.com',
-            'mainDomain'      => 'http://pumpic.com',
-            'cpDomain'        => 'http://cp.pumpic.com',
-            'cpStaticDomain'  => 'http://cp.pumpic.com/static',
-            'cookieDomain'    => '.pumpic.com',
-            'supportEmail'    => 'support@pumpic.com',
-            'registrationPage'=> 'http://pumpic.com/pricing-and-plans',
-            'mailSender'      => 'http://someHost/sender.php'
-        ),
-        2 => array(
-            ''
+            'mailSender'      => 'http://sender-mail.pumpic.com/'
         )
     );
     protected static $databases = array(
@@ -181,10 +167,19 @@ class GlobalSettings
         throw new InvalidSite("Invalid site or site settings");
     }
 
-    public static function getName($site)
+    public static function getRefundPolicyPageURL($site)
     {
-        if (isset(self::$sites[$site]['name'])) {
-            return self::$sites[$site]['name'];
+        if (isset(self::$sites[$site]['refundPolicyPage'])) {
+            return self::$sites[$site]['refundPolicyPage'];
+        }
+
+        throw new InvalidSite("Invalid site or site settings");
+    }
+    
+    public static function getMailSenderURL($site)
+    {
+        if (isset(self::$sites[$site]['mailSender'])) {
+            return self::$sites[$site]['mailSender'];
         }
 
         throw new InvalidSite("Invalid site or site settings");
