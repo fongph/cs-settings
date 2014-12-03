@@ -23,7 +23,8 @@ class GlobalSettings
             'registrationPage' => 'http://pumpic.com/pricing.html',
             'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
             'mailSender'       => 'http://sender-mail.pumpic.com/',
-            'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11'
+            'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11',
+            'directLoginSalt'  => '2hTXkCn38;J]eN}b-'
         ),
         1 => array(
             'mainDomain'       => 'http://pumpic.com',
@@ -35,7 +36,8 @@ class GlobalSettings
             'registrationPage' => 'http://pumpic.com/pricing.html',
             'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
             'mailSender'       => 'http://sender-mail.pumpic.com/',
-            'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11'
+            'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11',
+            'directLoginSalt'  => 'wNDs{j++?o@-*|q|2hTXkCn38;J]eN}b--n9/SIVoj6+'
         )
     );
     protected static $databases = array(
@@ -221,6 +223,15 @@ class GlobalSettings
     {
         if (isset(self::$sites[$site]['mainDomain'])) {
             return self::$sites[$site]['mainDomain'];
+        }
+
+        throw new InvalidSite("Invalid site or site settings");
+    }
+    
+    public static function getDirectLoginSalt($site)
+    {
+        if (isset(self::$sites[$site]['directLoginSalt'])) {
+            return self::$sites[$site]['directLoginSalt'];
         }
 
         throw new InvalidSite("Invalid site or site settings");
