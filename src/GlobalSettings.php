@@ -84,7 +84,7 @@ class GlobalSettings
         'bucket'=> 'incoming-files',
         'region'=>'us-west-2'
     );
-    protected $elasticTranscode = array(
+    protected static $elasticTranscode = array(
         'PipelineId'=> '1417273865573-ymbfo9',
         'PresetId'  => '1351620000001-000020'
     );
