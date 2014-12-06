@@ -110,9 +110,9 @@ class GlobalSettings
     );
     protected static $timeWaitForSend = null; //in seconds
     protected static $versionsApps = array(
-        'ios'       => 44,
-        'android'   => 66,
-        'blackberry'=> 3
+        'ios'       => 1,
+        'android'   => 1,
+        'blackberry'=> 1
     );
     protected static $apiJson = array(
         'master'=> 'https://apijson.pumpic.com:4433/api.php',
