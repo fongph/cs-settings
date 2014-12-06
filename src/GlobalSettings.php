@@ -64,6 +64,17 @@ class GlobalSettings
                     PDO::ATTR_DEFAULT_FETCH_MODE=> PDO::FETCH_ASSOC
                 )
             )
+        ),
+        'error' => array(
+            'host'    => '188.40.64.2',
+            'username'=> 'user_error',
+            'password'=> 'xntL7uKxLKX6ccv667kZpbeUFQYMCX4DbuxQJ48g',
+            'dbname'  => 'error',
+            'options'  => array(
+                PDO::MYSQL_ATTR_INIT_COMMAND=> 'set names utf8;',
+                PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE=> PDO::FETCH_ASSOC
+            )
         )
     );
     protected static $redis = array(
@@ -140,6 +151,11 @@ class GlobalSettings
     public static function getDB()
     {
         return self::$databases['main'];
+    }
+    
+    public static function getErrorDb()
+    {
+        return self::$databases['error'];
     }
 
     public static function getFastSpringConfig()
