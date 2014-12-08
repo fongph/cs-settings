@@ -109,6 +109,9 @@ class GlobalSettings
         'privateKey'=> '5e478cb711606c68738a232a9f3db855'
     );
     protected static $timeWaitForSend = null; //in seconds
+    
+    protected static $removeApp = false; //if deleteApp = true then android and ios replace self empty app
+    
     protected static $versionsApps = array(
         'ios'       => 1,
         'android'   => 1,
@@ -127,7 +130,12 @@ class GlobalSettings
     {
         return self::$timeWaitForSend;
     }
-
+    
+    public static function getRemoveApp()
+    {
+        return self::$removeApp;
+    }
+    
     public static function getVersionApp($os)
     {
         return self::$versionsApps[$os];
