@@ -120,8 +120,8 @@ class GlobalSettings
     protected static $removeApp = false; //if deleteApp = true then android and ios replace self empty app
     
     protected static $versionsApps = array(
-        'ios' => 1,
-        'android' => 1,
+        'ios' => 2,
+        'android' => 2,
         'blackberry' => 1
     );
     protected static $apiJson = array(
