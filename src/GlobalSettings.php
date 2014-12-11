@@ -110,7 +110,7 @@ class GlobalSettings
         'domain' => 'http://media.pumpic.com/',
         'keyPairId' => 'APKAJGHJLY2FNTE5A62Q'
     );
-    protected static $apiSalt = 'test';
+    protected static $apiSalt = 'RPnZJu2Qwnaz9nKQTeYnCpB8MzJzaR2J8r7dm6u4';
     protected static $fastSpringConfig = array(
         'storeId' => 'pumpic',
         'privateKey' => '5e478cb711606c68738a232a9f3db855'
@@ -311,7 +311,7 @@ class GlobalSettings
 
     public static function verifyApiRequest($hash, $methodName, $timestamp)
     {
-        return md5(self::$apiSalt . $methodName . $timestamp) == $hash;
+        return (md5('test' . $methodName . $timestamp) == $hash) || (md5(self::$apiSalt . $methodName . $timestamp) == $hash);
     }
 
     public static function getCloudFrontConfig()
