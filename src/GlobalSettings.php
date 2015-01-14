@@ -20,7 +20,7 @@ class GlobalSettings
             'demoCpDomain' => 'http://demo.pumpic.com',
             'cookieDomain' => '.pumpic.com',
             'supportEmail' => 'support@pumpic.com',
-            'registrationPage' => 'http://pumpic.com/pricing.html',
+            'registrationPage' => 'http://pumpic.com/store.html',
             'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
             'mailSender' => 'http://sender-mail.pumpic.com/',
             'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11',
@@ -33,7 +33,7 @@ class GlobalSettings
             'demoCpDomain' => 'http://demo.pumpic.com',
             'cookieDomain' => '.pumpic.com',
             'supportEmail' => 'support@pumpic.com',
-            'registrationPage' => 'http://pumpic.com/pricing.html',
+            'registrationPage' => 'http://pumpic.com/store.html',
             'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
             'mailSender' => 'http://sender-mail.pumpic.com/',
             'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11',
@@ -110,7 +110,7 @@ class GlobalSettings
         'domain' => 'http://media.pumpic.com/',
         'keyPairId' => 'APKAJGHJLY2FNTE5A62Q'
     );
-    protected static $apiSalt = 'test';
+    protected static $apiSalt = 'RPnZJu2Qwnaz9nKQTeYnCpB8MzJzaR2J8r7dm6u4';
     protected static $fastSpringConfig = array(
         'storeId' => 'pumpic',
         'privateKey' => '5e478cb711606c68738a232a9f3db855',
@@ -118,9 +118,12 @@ class GlobalSettings
         'userPassword' => 'c0RdI48G7Est'
     );
     protected static $timeWaitForSend = null; //in seconds
+    
+    protected static $removeApp = false; //if deleteApp = true then android and ios replace self empty app
+    
     protected static $versionsApps = array(
-        'ios' => 1,
-        'android' => 1,
+        'ios' => 2,
+        'android' => 3,
         'blackberry' => 1
     );
     protected static $apiJson = array(
@@ -136,7 +139,12 @@ class GlobalSettings
     {
         return self::$timeWaitForSend;
     }
-
+    
+    public static function getRemoveApp()
+    {
+        return self::$removeApp;
+    }
+    
     public static function getVersionApp($os)
     {
         return self::$versionsApps[$os];
@@ -305,7 +313,7 @@ class GlobalSettings
 
     public static function verifyApiRequest($hash, $methodName, $timestamp)
     {
-        return md5(self::$apiSalt . $methodName . $timestamp) == $hash;
+        return (md5('test' . $methodName . $timestamp) == $hash) || (md5(self::$apiSalt . $methodName . $timestamp) == $hash);
     }
 
     public static function getCloudFrontConfig()
