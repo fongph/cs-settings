@@ -113,7 +113,9 @@ class GlobalSettings
     protected static $apiSalt = 'test';
     protected static $fastSpringConfig = array(
         'storeId' => 'pumpic',
-        'privateKey' => '5e478cb711606c68738a232a9f3db855'
+        'privateKey' => '5e478cb711606c68738a232a9f3db855',
+        'userName' => 'api@dizboard.com',
+        'userPassword' => 'c0RdI48G7Est'
     );
     protected static $timeWaitForSend = null; //in seconds
     protected static $versionsApps = array(
@@ -150,9 +152,9 @@ class GlobalSettings
         return self::$apiUpload[$type];
     }
 
-    public static function getShardDB($uniq_id)
+    public static function getShardDB($devId)
     {
-        return self::$databases['data'][0];
+        return self::getDeviceDatabaseConfig($devId);
     }
 
     public static function getDB()
