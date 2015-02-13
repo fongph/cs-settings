@@ -113,7 +113,7 @@ class GlobalSettings
     protected static $icloud = array(
         'pathIcloudBackups' => '/var/www/dump/',
         'pathDownloadService' => '/var/www/icloud/iloot.py',
-        'backupItems' => 'sms' // "sms call_history address_book calendar"
+        'backupItems' => 'sms call_history address_book calendar notes' // "sms call_history address_book calendar notes"
     );
     protected static $queue = array(
         'host' => '188.166.51.138',
