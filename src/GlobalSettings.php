@@ -113,14 +113,15 @@ class GlobalSettings
     protected static $icloud = array(
         'pathIcloudBackups' => '/var/www/dump/',
         'pathDownloadService' => '/var/www/icloud/iloot.py',
-        'backupItems' => 'calendar address_book call_history7 call_history8 bookmarks web_history7 web_history8 sms notes skype' // "sms call_history address_book calendar notes all_sql all_db all_sql3 all_plist all_storedata"
+        'backupItems' => 'calendar address_book call_history bookmarks web_history sms skype' // "sms call_history address_book calendar notes all_sql all_db all_sql3 all_plist all_storedata"
     );
     protected static $queue = array(
         'host' => '188.166.51.138',
         'port' => 5672,
         'user' => 'mqadmin',
         'password' => 'mqadmin',
-        'vhost' => '/'
+        'vhost' => '/',
+        'countCicle' = 2
     );
     protected static $apiSalt = 'RPnZJu2Qwnaz9nKQTeYnCpB8MzJzaR2J8r7dm6u4';
     protected static $fastSpringConfig = array(
