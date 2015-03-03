@@ -121,7 +121,7 @@ class GlobalSettings
         'user' => 'mqadmin',
         'password' => 'mqadmin',
         'vhost' => '/',
-        'countCicle' = 2
+        'countErrorCycles' => 2,
     );
     protected static $apiSalt = 'RPnZJu2Qwnaz9nKQTeYnCpB8MzJzaR2J8r7dm6u4';
     protected static $fastSpringConfig = array(
