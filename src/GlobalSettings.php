@@ -120,8 +120,8 @@ class GlobalSettings
     protected static $queue = array(
         'host' => '188.166.51.138',
         'port' => 5672,
-        'user' => 'mqadmin',
-        'password' => 'mqadmin',
+        'user' => 'worker_user',
+        'password' => 'ZSHfQF5JTEjM7en',
         'vhost' => '/',
         'countErrorCycles' => 2,
     );
