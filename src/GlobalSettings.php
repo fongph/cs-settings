@@ -18,6 +18,7 @@ class GlobalSettings
             'cpDomain' => 'http://cp.pumpic.com',
             'cpStaticDomain' => 'http://cp.pumpic.com/static',
             'demoCpDomain' => 'http://demo.pumpic.com',
+            'demoCpStaticDomain' => 'http://demo.pumpic.com/static',
             'cookieDomain' => '.pumpic.com',
             'supportEmail' => 'support@pumpic.com',
             'registrationPage' => 'http://pumpic.com/store.html',
@@ -31,6 +32,7 @@ class GlobalSettings
             'cpDomain' => 'http://cp.pumpic.com',
             'cpStaticDomain' => 'http://cp.pumpic.com/static',
             'demoCpDomain' => 'http://demo.pumpic.com',
+            'demoCpStaticDomain' => 'http://demo.pumpic.com/static',
             'cookieDomain' => '.pumpic.com',
             'supportEmail' => 'support@pumpic.com',
             'registrationPage' => 'http://pumpic.com/store.html',
@@ -211,6 +213,15 @@ class GlobalSettings
     {
         if (isset(self::$sites[$site]['demoCpDomain'])) {
             return self::$sites[$site]['demoCpDomain'];
+        }
+
+        throw new InvalidSite("Invalid site or site settings");
+    }
+    
+    public static function getDemoControlPanelStaticURL($site)
+    {
+        if (isset(self::$sites[$site]['demoCpStaticDomain'])) {
+            return self::$sites[$site]['demoCpStaticDomain'];
         }
 
         throw new InvalidSite("Invalid site or site settings");
