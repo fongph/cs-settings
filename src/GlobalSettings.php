@@ -23,7 +23,7 @@ class GlobalSettings
             'supportEmail' => 'support@pumpic.com',
             'registrationPage' => 'http://pumpic.com/store.html',
             'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
-            'mailSender' => 'http://sender-mail.pumpic.com/',
+            'mailSender' => 'http://148.251.64.1:8888/',
             'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11',
             'directLoginSalt' => '2hTXkCn38;J]eN}b-'
         ),
@@ -37,7 +37,7 @@ class GlobalSettings
             'supportEmail' => 'support@pumpic.com',
             'registrationPage' => 'http://pumpic.com/store.html',
             'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
-            'mailSender' => 'http://sender-mail.pumpic.com/',
+            'mailSender' => 'http://148.251.64.1:8888/',
             'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11',
             'directLoginSalt' => 'wNDs{j++?o@-*|q|2hTXkCn38;J]eN}b--n9/SIVoj6+'
         )
@@ -138,7 +138,7 @@ class GlobalSettings
     
     protected static $versionsApps = array(
         'ios' => 6,
-        'android' => 7,
+        'android' => 8,
         'blackberry' => 1
     );
     protected static $apiJson = array(
