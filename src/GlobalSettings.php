@@ -136,6 +136,9 @@ class GlobalSettings
     
     protected static $removeApp = false; //if deleteApp = true then android and ios replace self empty app
     
+    protected static $sendCrashLog = true;
+    
+    
     protected static $versionsApps = array(
         'ios' => 6,
         'android' => 9,
@@ -163,6 +166,10 @@ class GlobalSettings
     public static function getRemoveApp()
     {
         return self::$removeApp;
+    }
+    
+    public static function sendCrachLog(){
+        return self::$sendCrashLog;
     }
     
     public static function getVersionApp($os)
