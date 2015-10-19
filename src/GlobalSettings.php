@@ -15,8 +15,8 @@ class GlobalSettings
     protected static $sites = array(
         0 => array(
             'mainDomain' => 'http://pumpic.com',
-            'cpDomain' => 'http://cp.pumpic.com',
-            'cpStaticDomain' => 'http://cp.pumpic.com/static',
+            'cpDomain' => 'https://cp.pumpic.com',
+            'cpStaticDomain' => 'https://cp.pumpic.com/static',
             'demoCpDomain' => 'http://demo.pumpic.com',
             'demoCpStaticDomain' => 'http://demo.pumpic.com/static',
             'cookieDomain' => '.pumpic.com',
@@ -29,8 +29,8 @@ class GlobalSettings
         ),
         1 => array(
             'mainDomain' => 'http://pumpic.com',
-            'cpDomain' => 'http://cp.pumpic.com',
-            'cpStaticDomain' => 'http://cp.pumpic.com/static',
+            'cpDomain' => 'https://cp.pumpic.com',
+            'cpStaticDomain' => 'https://cp.pumpic.com/static',
             'demoCpDomain' => 'http://demo.pumpic.com',
             'demoCpStaticDomain' => 'http://demo.pumpic.com/static',
             'cookieDomain' => '.pumpic.com',
