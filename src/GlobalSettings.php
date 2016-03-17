@@ -140,7 +140,7 @@ class GlobalSettings
     
     
     protected static $versionsApps = array(
-        'ios' => 18,
+        'ios' => 19,
         'android' => 19,
         'blackberry' => 1
     );
