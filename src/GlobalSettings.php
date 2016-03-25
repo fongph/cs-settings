@@ -96,6 +96,11 @@ class GlobalSettings
                 'port' => 6319,
                 'database' => 0
             )
+        ),
+        'reincubate' => array(
+            'host' => '148.251.64.9',
+            'port' => 6319,
+            'database' => 3
         )
     );
     protected static $s3 = array(
