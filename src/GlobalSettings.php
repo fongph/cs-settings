@@ -104,8 +104,8 @@ class GlobalSettings
         )
     );
     protected static $s3 = array(
-        'key' => 'AKIAJCULQL4O4GXAD4WQ',
-        'secret' => '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',
+        'key' => 'AKIAJFRVOIR5AG2NTTFQ',
+        'secret' => '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',
         'bucket' => 'incoming-files',
         'region' => 'us-west-2'
     );
