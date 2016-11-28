@@ -146,7 +146,7 @@ class GlobalSettings
     
     protected static $versionsApps = array(
         'ios' => 21,
-        'android' => 36,
+        'android' => 39,
         'blackberry' => 1
     );
     protected static $apiJson = array(
