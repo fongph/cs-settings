@@ -212,6 +212,10 @@ class GlobalSettings
     {
         return self::$databases['main'];
     }
+   public static function getPhonesDb()
+    {
+        return self::$databases['phones'];
+    }
 
     public static function getErrorDb()
     {
