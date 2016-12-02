@@ -77,6 +77,17 @@ class GlobalSettings
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             )
+        ),
+        'phones' => array(
+            'host' => '188.40.64.2',
+            'username' => 'ci_user',
+            'password' => 'qmsgrSR8qhxeNSC44533hVBqwNajd62z2QtXwN6E',
+            'dbname' => 'phones',
+            'options' => array(
+                PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8;',
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            )
         )
     );
     protected static $redis = array(
