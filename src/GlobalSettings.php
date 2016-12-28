@@ -134,9 +134,9 @@ class GlobalSettings
         'backupItems' => 'calendar address_book call_history bookmarks web_history sms skype whatsapp' // "sms call_history address_book calendar notes all_sql all_db all_sql3 all_plist all_storedata"
     );
     protected static $queue = array(
-        'host' => '188.166.51.138',
+        'host' => '139.59.142.126',
         'port' => 5672,
-        'user' => 'worker_user',
+        'user' => 'worker',
         'password' => 'ZSHfQF5JTEjM7en',
         'vhost' => '/',
         'countErrorCycles' => 2,
