@@ -125,7 +125,7 @@ class GlobalSettings
         'PresetId' => '1351620000001-000020'
     );
     protected static $cloudFront = array(
-        'domain' => 'https://media.pumpic.com/',
+        'domain' => 'http://media.pumpic.com/',
         'keyPairId' => 'APKAJGHJLY2FNTE5A62Q'
     );
     protected static $icloud = array(
