@@ -30,9 +30,9 @@ class GlobalSettings
         1 => array(
             'mainDomain' => 'https://pumpic.com',
             'cpDomain' => 'https://cp.pumpic.com',
-            'cpStaticDomain' => 'https://cp.pumpic.com/static',
+            'cpStaticDomain' => '//cp.pumpic.com/static',
             'demoCpDomain' => 'https://demo.pumpic.com',
-            'demoCpStaticDomain' => 'https://demo.pumpic.com/static',
+            'demoCpStaticDomain' => '//demo.pumpic.com/static',
             'cookieDomain' => '.pumpic.com',
             'supportEmail' => 'support@pumpic.com',
             'registrationPage' => 'https://pumpic.com/store.html',
