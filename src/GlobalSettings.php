@@ -14,29 +14,29 @@ class GlobalSettings
 
     protected static $sites = array(
         0 => array(
-            'mainDomain' => 'http://pumpic.com',
+            'mainDomain' => 'https://pumpic.com',
             'cpDomain' => 'https://cp.pumpic.com',
             'cpStaticDomain' => 'https://cp.pumpic.com/static',
-            'demoCpDomain' => 'http://demo.pumpic.com',
-            'demoCpStaticDomain' => 'http://demo.pumpic.com/static',
+            'demoCpDomain' => 'https://demo.pumpic.com',
+            'demoCpStaticDomain' => 'https://demo.pumpic.com/static',
             'cookieDomain' => '.pumpic.com',
             'supportEmail' => 'support@pumpic.com',
-            'registrationPage' => 'http://pumpic.com/store.html',
-            'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
+            'registrationPage' => 'https://pumpic.com/store.html',
+            'refundPolicyPage' => 'https://pumpic.com/policy.html#refund-policy',
             'mailSender' => 'http://148.251.64.1:8888/',
             'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11',
             'directLoginSalt' => '2hTXkCn38;J]eN}b-'
         ),
         1 => array(
-            'mainDomain' => 'http://pumpic.com',
+            'mainDomain' => 'https://pumpic.com',
             'cpDomain' => 'https://cp.pumpic.com',
-            'cpStaticDomain' => 'https://cp.pumpic.com/static',
-            'demoCpDomain' => 'http://demo.pumpic.com',
-            'demoCpStaticDomain' => 'http://demo.pumpic.com/static',
+            'cpStaticDomain' => '//cp.pumpic.com/static',
+            'demoCpDomain' => 'https://demo.pumpic.com',
+            'demoCpStaticDomain' => '//demo.pumpic.com/static',
             'cookieDomain' => '.pumpic.com',
             'supportEmail' => 'support@pumpic.com',
-            'registrationPage' => 'http://pumpic.com/store.html',
-            'refundPolicyPage' => 'http://pumpic.com/policy.html#refund-policy',
+            'registrationPage' => 'https://pumpic.com/store.html',
+            'refundPolicyPage' => 'https://pumpic.com/policy.html#refund-policy',
             'mailSender' => 'http://148.251.64.1:8888/',
             'mailSenderSecret' => '258EAFA5-E914-47DA-95CA-C5AB0DC85B11',
             'directLoginSalt' => 'wNDs{j++?o@-*|q|2hTXkCn38;J]eN}b--n9/SIVoj6+'
@@ -134,9 +134,9 @@ class GlobalSettings
         'backupItems' => 'calendar address_book call_history bookmarks web_history sms skype whatsapp' // "sms call_history address_book calendar notes all_sql all_db all_sql3 all_plist all_storedata"
     );
     protected static $queue = array(
-        'host' => '188.166.51.138',
+        'host' => '139.59.142.126',
         'port' => 5672,
-        'user' => 'worker_user',
+        'user' => 'worker',
         'password' => 'ZSHfQF5JTEjM7en',
         'vhost' => '/',
         'countErrorCycles' => 2,
