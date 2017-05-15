@@ -148,6 +148,12 @@ class GlobalSettings
         'userName' => 'api@dizboard.com',
         'userPassword' => 'c0RdI48G7Est'
     );
+
+    protected static $fastSpringContextualConfig = array(
+        'storeId' => 'pumpic',
+        'userName' => '4IEEFEM0QIWX0VAWPN_F6A',
+        'userPassword' => 'Q7fDEm10QDChgYsAXEsQmg'
+    );
     protected static $timeWaitForSend = null; //in seconds
     
     protected static $removeApp = false; //if deleteApp = true then android and ios replace self empty app
