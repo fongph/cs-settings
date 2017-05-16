@@ -235,7 +235,7 @@ class GlobalSettings
 
     public static function getFastSpringContextualConfig()
     {
-        return self::$fastSpringConfig;
+        return self::$fastSpringContextualConfig;
     }
 
     public static function getControlPanelURL($site)
