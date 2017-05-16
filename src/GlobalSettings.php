@@ -233,6 +233,11 @@ class GlobalSettings
         return self::$fastSpringConfig;
     }
 
+    public static function getFastSpringContextualConfig()
+    {
+        return self::$fastSpringConfig;
+    }
+
     public static function getControlPanelURL($site)
     {
         if (isset(self::$sites[$site]['cpDomain'])) {
