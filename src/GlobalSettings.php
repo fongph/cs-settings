@@ -115,11 +115,13 @@ class GlobalSettings
         )
     );
     protected static $s3 = array(
-        'key' => 'AKIAJFRVOIR5AG2NTTFQ',
-        'secret' => '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',
-        'bucket' => 'incoming-files',
+        'version' => '2006-03-01',
         'region' => 'us-west-2',
-        'version' => '2006-03-01'
+        'bucket' => 'incoming-files',
+        'credentials' => array(
+            'key' => 'AKIAJFRVOIR5AG2NTTFQ',
+            'secret' => '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',
+        )
     );
     protected static $elasticTranscode = array(
         'PipelineId' => '1417273865573-ymbfo9',
